@@ -1,71 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import  Graph  from './Graph'
+import  Graph1  from './Graph1'
+import  Graph2  from './graph2/Graph2'
+import React from 'react'
+import { Tabs } from 'antd';
 
-import G6 from '@antv/g6';
-import ReactDOM from 'react-dom';
+const App = () => {
+	const { TabPane } = Tabs;
+	
+	return(
+	<Tabs defaultActiveKey="1" onChange={() => null}>
+    <TabPane tab="Tab 1" key="1">
+      <Graph/>
+    </TabPane>
+    <TabPane tab="Tab 2" key="2">
+      <Graph1/>
+    </TabPane>
+    <TabPane tab="Tab 3" key="3">
+      <Graph2/>
+    </TabPane>
+	</Tabs>
+	)
 
-const data = {
-	// The array of nodes
-	nodes: [
-	  {
-		id: 'node1',
-		label: 'node1',
-		x: 100,
-		y: 200,
-	  },
-	  {
-		  id: 'node2',
-		  label: 'node2',
-		x: 300,
-		y: 200,
-	  },
-	],
-	edges: [
-	  {
-		source: 'node1',
-		target: 'node2',
-	  },
-	],
-};
-  
-//container: ReactDOM.findDOMNode(ref.current),
-
-function App() {
-	const ref = React.useRef(null);
-	let graph = null;
-  
-	useEffect(() => {
-	  if (!graph) {
-		graph = new G6.Graph({
-			container: ReactDOM.findDOMNode(ref.current),
-			width: 500,
-			height: 500,
-			defaultNode: {
-			  shape: "circle",
-			  size: [100],
-			  color: "#5B8FF9",
-			  style: {
-				fill: "#9EC9FF",
-				lineWidth: 3
-			  },
-			  labelCfg: {
-				style: {
-				  fill: "#fff",
-				  fontSize: 20
-				}
-			  }
-			},
-			defaultEdge: {
-			  style: {
-				stroke: "#e2e2e2"
-			  }
-			}
-		  });
-	  }
-	  graph.data(data);
-	  graph.render();
-	}, []);
-  
-	return <div ref={ref}></div>;
 }
 
 export default App;

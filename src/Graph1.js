@@ -4,7 +4,7 @@ import G6 from '@antv/g6';
 import ReactDOM from 'react-dom';
 import { data } from './Data'
 
-const Graph = () => {
+const Graph1 = () => {
 const minWidth = 60;
 
 const BaseConfig = {
@@ -287,4 +287,4 @@ const BaseConfig = {
 	
 }
 
-export default Graph;
+export default Graph1;

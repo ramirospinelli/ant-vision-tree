@@ -1,15 +1,13 @@
 import './index.css';
 
 import App from './App';
-import Graph from './Graph1'
-import Graph2 from './graph2/Graph2'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Graph2 />
+	<React.StrictMode>
+		<App />
   </React.StrictMode>,
   document.getElementById('root')
 );
