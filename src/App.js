@@ -1,6 +1,7 @@
 import  Graph  from './Graph'
 import  Graph1  from './Graph1'
-import  Graph2  from './graph2/Graph2'
+import Graph2 from './graph2/Graph2'
+import MindMap  from './mindmap/MindMap'
 import React from 'react'
 import { Tabs } from 'antd';
 
@@ -9,14 +10,17 @@ const App = () => {
 	
 	return(
 	<Tabs defaultActiveKey="1" onChange={() => null}>
-    <TabPane tab="Tab 1" key="1">
+    <TabPane tab="nodes" key="1">
       <Graph/>
     </TabPane>
-    <TabPane tab="Tab 2" key="2">
+    <TabPane tab="colapse-expand" key="2">
       <Graph1/>
     </TabPane>
-    <TabPane tab="Tab 3" key="3">
+    <TabPane tab="drag node" key="3">
       <Graph2/>
+	</TabPane>
+	<TabPane tab="Mind map" key="4">
+		<MindMap/>
     </TabPane>
 	</Tabs>
 	)
